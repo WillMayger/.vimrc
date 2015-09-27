@@ -14,6 +14,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'		
+
+Bundle 'mattn/emmet-vim'
+
 "
 filetype plugin indent on
 
@@ -27,6 +30,10 @@ augroup vimrc_autocmds
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
+
+set clipboard=unnamed
+set clipboard=unnamedplus
+
 "Nerd tree setup
 map <F2> :NERDTreeToggle<CR>
 "python setup
