@@ -1,84 +1,18 @@
-set nocompatible
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-" " required! 
-Bundle 'gmarik/vundle'
-"
-" " The bundles you install will be listed here
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'		
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-Bundle 'mattn/emmet-vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-"
-filetype plugin indent on
+set t_Co=256
 
-augroup vimrc_autocmds
-	autocmd!
-        " highlight characters past column 120
-        autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-	autocmd FileType python match Excess /\%120v.*/
-	autocmd FileType python set nowrap
-	augroup END
-" Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set laststatus=2
-
-set clipboard=unnamed
-set clipboard=unnamedplus
-
-"Nerd tree setup
-map <F2> :NERDTreeToggle<CR>
-"python setup
-" Python-mode
-" " Activate rope
-" " Keys:
-" " K             Show python docs
-" " <Ctrl-Space>  Rope autocomplete
-" " <Ctrl-c>g     Rope goto definition
-" " <Ctrl-c>d     Rope show documentation
-" " <Ctrl-c>f     Rope find occurrences
-" " <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
-" " [[            Jump on previous class or function (normal, visual, operator
-" modes)
-" " ]]            Jump on next class or function (normal, visual, operator
-" modes)
-" " [M            Jump on previous class or method (normal, visual, operator
-" modes)
-" " ]M            Jump on next class or method (normal, visual, operator
-" modes)
-let g:pymode_rope = 1
-"
-" " Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
-"
-" "Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-" " Auto check on save
-let g:pymode_lint_write = 1
-"
-" " Support virtualenv
-let g:pymode_virtualenv = 1
-"
-" " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-"
-" " syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-"
-" " Don't autofold code
-let g:pymode_folding = 0
-let g:pymode_rope = 0
+colorscheme vendetta
