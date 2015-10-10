@@ -9,6 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+Plugin 'scrooloose/nerdtree'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -16,3 +18,10 @@ filetype plugin indent on    " required
 set t_Co=256
 
 colorscheme vendetta
+
+" " Setting line numbers on
+:set number
+
+" " MAPPINGS
+
+nmap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
