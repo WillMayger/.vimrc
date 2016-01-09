@@ -7,6 +7,8 @@ call vundle#begin()
 " "@@@@@@@@@@@@@@@@@@@@@Bundles go here@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'tpope/vim-fugitive'
@@ -30,12 +32,14 @@ filetype plugin indent on    " required
 " " Setting line numbers on
 :set t_Co=256
 :set number
-:set tabstop=4
-:set shiftwidth=4
-:set softtabstop=4
+:set expandtab
+:set tabstop=2
+:set shiftwidth=2
+:set softtabstop=2
 :set autoindent
 :set cursorline
 :set undodir=~/.vim/undo/
+:set nowrap
 
 " " MAPPINGS
 map <C-n> :NERDTreeToggle<CR>
